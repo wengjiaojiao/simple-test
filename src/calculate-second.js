@@ -1,12 +1,18 @@
 function calculate_median(arr) {
-    var result = arr.filter(function(n, i) {
+    var filterNum = arr.filter(function(n, i) {
         return i % 2 === 1;
     }).sort();
-    var midLength = result.length / 2;
+    var result = median(filterNum);
 
-    if(result.length % 2 === 0) {
-        return (result[midLength] + result[midLength - 1]) / 2;
+    return result;
+}
+
+function median(arr) {
+    var midLength = arr.length / 2;
+
+    if(arr.length % 2 === 0) {
+        return (arr[midLength] + arr[midLength - 1]) / 2;
     }else {
-        return result[parseInt(midLength)];
+        return arr[parseInt(midLength)];
     }
 }
