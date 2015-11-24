@@ -1,7 +1,7 @@
 function calculate_median(arr) {
     var result = arr.filter(function(n, i) {
         return i % 2 === 1;
-    });
+    }).sort();
     var midLength = result.length / 2;
 
     if(result.length % 2 === 0) {
